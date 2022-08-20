@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+}
+body {
+	background-color: #23262b;
+}
+form {
+	text-align: center;
+	padding: 50px;
+}
+input {
+	padding: 1.5rem;
+	padding-left: 3rem;
+	border-radius: 50px;
+	border: 3px solid #bbbfc0;
+	background-color: transparent;
+	color: #bbbfc0;
+	font-size: 1.4rem;
+	width: 50%;
+}
+input::placeholder {
+	font-size: 1.2rem;
+}
+input:focus,
+input:active {
+	outline: none;
+	background-color: #bbbfc00b !important;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+}
+#home {
+	/* border-radius: 50px; */
+	border: none;
+	position: relative;
+
+	background-color: transparent;
+	color: #bbbfc0;
+	padding: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+}
+#home::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 28px;
+	transform: translateX(-50%);
+	width: 20px;
+	height: 1px;
+	background-color: #bbbfc0;
+	/* transform: translateX(-50%) scaleX(0); */
+	transform-origin: 50% 50%;
+	transition: all 0.3s;
+}
+#home:hover::after {
+	transform: translateX(-50%) scaleX(2);
+	background-color: rgba(255, 0, 0, 0.611);
+}
+main {
+	padding: 50px;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+main > h2 {
+	color: white;
+	text-align: center;
+}
+.movie-card {
+	color: #bbbfc0;
+	width: 300px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 3px #2c2c2d90;
+	position: relative;
+	overflow: hidden;
+}
+
+.movie-card img {
+	width: 100%;
+	border-radius: 5px 5px 0 0;
+}
+.movie-info {
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.green {
+	border-bottom: 2px solid rgb(73, 203, 73);
+}
+.orange {
+	border-bottom: 2px solid rgb(203, 149, 73);
+}
+.red {
+	border-bottom: 2px solid rgb(203, 90, 73);
+}
+.overview {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: #23262be7;
+	padding: 20px;
+	border-radius: 20px;
+	transform: translateY(104%);
+	transition: transform 0.4s ease-in;
+}
+.overview h4 {
+	/* width: 60px; */
+	position: relative;
+	margin-bottom: 20px;
+	/* border-bottom: 2px solid #a3a5a5db; */
+}
+.overview h4::after {
+	content: "";
+	position: absolute;
+	bottom: -5px;
+	left: 22px;
+	transform: translateX(-50%);
+	width: 40px;
+	height: 1px;
+	background-color: #bbbfc0;
+}
+
+.movie-card:hover .overview {
+	transform: translateY(0);
+}
